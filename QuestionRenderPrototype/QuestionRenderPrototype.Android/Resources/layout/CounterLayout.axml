@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout1"
+        android:rowCount="1"
+        android:columnCount="3">
+        <Button
+            android:text="-"
+            android:id="@+id/decreaseVale"
+            android:layout_marginLeft="50dp"
+            android:textSize="24dp" />
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/counterText"
+            android:layout_marginLeft="50dp" />
+        <Button
+            android:text="+"
+            android:id="@+id/increaseValue"
+            android:layout_marginLeft="50dp"
+            android:textSize="24dp" />
+    </GridLayout>
+</LinearLayout>
