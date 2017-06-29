@@ -9,16 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestionRenderPrototype.iOS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestionRenderPrototype.UWP", "QuestionRenderPrototype\QuestionRenderPrototype.UWP\QuestionRenderPrototype.UWP.csproj", "{63FDC879-CABC-4FF7-92A5-BE1012F2F0CA}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "QuestionRenderPrototype", "QuestionRenderPrototype\QuestionRenderPrototype\QuestionRenderPrototype.shproj", "{6986340E-AF4F-472A-9108-6963D90F75F4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{42B19B30-9410-4856-8EE3-7762A589BDD5}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		QuestionRenderPrototype\QuestionRenderPrototype\QuestionRenderPrototype.projitems*{2275080b-7e5f-4141-9e64-1caeed80bacd}*SharedItemsImports = 4
-		QuestionRenderPrototype\QuestionRenderPrototype\QuestionRenderPrototype.projitems*{47a2e33f-e925-42e8-a104-8323890eb3f6}*SharedItemsImports = 4
-		QuestionRenderPrototype\QuestionRenderPrototype\QuestionRenderPrototype.projitems*{63fdc879-cabc-4ff7-92a5-be1012f2f0ca}*SharedItemsImports = 4
-		QuestionRenderPrototype\QuestionRenderPrototype\QuestionRenderPrototype.projitems*{6986340e-af4f-472a-9108-6963d90f75f4}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

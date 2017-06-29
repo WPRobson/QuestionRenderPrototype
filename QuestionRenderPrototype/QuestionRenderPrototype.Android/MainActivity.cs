@@ -50,15 +50,7 @@ namespace QuestionRenderPrototype.Droid
             questionsList.Add(quesiton8);
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-
             
-         
-
-           
-
-            
-            
-
             grid = (GridLayout)FindViewById(Resource.Id.gridLayout1);
 
             createControls();

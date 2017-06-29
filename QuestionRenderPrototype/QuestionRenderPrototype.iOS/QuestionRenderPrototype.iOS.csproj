@@ -61,6 +61,9 @@
     <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -116,11 +119,40 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="CheckBoxControl.cs" />
+    <Compile Include="RadioButtonControl.cs" />
+    <Compile Include="RadioButtonView.cs" />
+    <Compile Include="CheckBoxGroup .cs" />
+    <Compile Include="RadioGroup.cs" />
+    <Compile Include="ScratchTicketView.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-  <Import Project="..\QuestionRenderPrototype\QuestionRenderPrototype.projitems" Label="Shared" Condition="Exists('..\QuestionRenderPrototype\QuestionRenderPrototype.projitems')" />
+  <ItemGroup>
+    <BundleResource Include="Resources\FillTexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FillTexture2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Monkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Monkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checkbox1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checkbox2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

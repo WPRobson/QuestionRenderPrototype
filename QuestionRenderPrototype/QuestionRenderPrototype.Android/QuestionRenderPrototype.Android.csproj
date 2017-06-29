@@ -48,6 +48,7 @@
     <Compile Include="CounterControl.cs" />
     <Compile Include="HappinessSelectorControl.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="NquireCustomControl.cs" />
     <Compile Include="RadioGroupQuestion.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,7 +117,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\face5border.png" />
   </ItemGroup>
-  <Import Project="..\QuestionRenderPrototype\QuestionRenderPrototype.projitems" Label="Shared" Condition="Exists('..\QuestionRenderPrototype\QuestionRenderPrototype.projitems')" />
   <Import Project="..\QuestionRenderPrototype\QuestionRenderPrototype.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

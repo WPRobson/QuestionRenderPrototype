@@ -7,12 +7,11 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace QuestionRenderPrototype.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("ScratchTicketView")]
+    partial class ScratchTicketView
     {
         void ReleaseDesignerOutlets ()
         {
