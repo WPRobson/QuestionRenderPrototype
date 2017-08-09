@@ -12,12 +12,13 @@ using Android.Widget;
 using Android.Graphics;
 using System.IO;
 using Android.Graphics.Drawables;
+using ClassLibrary1;
 
 namespace QuestionRenderPrototype.Droid
 {
-    class SignatureControl : RelativeLayout
+    class SignatureControl : RelativeLayout, IQuestion
     {
-
+        bool isRequired;
         public static View rootView;
         public static Button clearButton;
         public static TextView nameLable;
@@ -29,9 +30,9 @@ namespace QuestionRenderPrototype.Droid
 
         LinearLayout signatureBox;
 
-        public SignatureControl(Context context) : base(context)
+        public SignatureControl(Context context,QuestionStucture stucture, bool required) : base(context)
         {
-
+            isRequired = required;
 
             rootView = Inflate(context, Resource.Layout.SignatureLayout, this);
             signatureBox = (LinearLayout)FindViewById(Resource.Id.SignatureBox);
@@ -60,6 +61,16 @@ namespace QuestionRenderPrototype.Droid
         private void ClearButton_Click(object sender, EventArgs e)
         {
             mSignature.clear();
+        }
+
+        public List<string> saveAnswers()
+        {
+            return null;
+        }
+
+        public bool checkIsRequired()
+        {
+            throw new NotImplementedException();
         }
 
         public class SignatureBehaviour : Android.Views.View

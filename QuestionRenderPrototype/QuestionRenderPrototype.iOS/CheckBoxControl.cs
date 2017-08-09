@@ -18,7 +18,7 @@ namespace QuestionRenderPrototype.iOS
         CGPoint latestPoint;
         bool startNewPath = false;
 
-        public  bool radioState { get; set; }
+        public  bool CheckedState { get; set; }
         
 
         UIImageView image;
@@ -41,7 +41,7 @@ namespace QuestionRenderPrototype.iOS
             image = new UIImageView();
             labelText = _labelText;
             Initialize();
-            radioState = false;
+            CheckedState = false;
         }
 
         public CheckBoxControl(string _labelText, CheckBoxGroup _checkBoxGroup, int groupID)
@@ -66,7 +66,7 @@ namespace QuestionRenderPrototype.iOS
         {
             base.TouchesBegan(touches, evt);
 
-            radioState = !radioState;
+            CheckedState = !CheckedState;
             Draw(Frame);
            
  
@@ -111,7 +111,7 @@ namespace QuestionRenderPrototype.iOS
             image.Image = null;
             
 
-            if (radioState == false)
+            if (CheckedState == false)
             {
                 image.Image = UIImage.FromBundle("checkbox1.png");
             }

@@ -9,11 +9,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ClassLibrary1;
 
 namespace QuestionRenderPrototype.Droid
 {
-    class HappinessSelectorControl : GridLayout
+    class HappinessSelectorControl : GridLayout, IQuestion
     {
+
+        bool isRequired;
         public static View rootView;
 
         public ImageButton rating1;
@@ -25,8 +28,9 @@ namespace QuestionRenderPrototype.Droid
         int selected = 1;
         int prevousSelected;
 
-        public HappinessSelectorControl(Context context) : base(context)
+        public HappinessSelectorControl(Context context, QuestionStucture stucture, bool required) : base(context)
         {
+            isRequired = required;
             rootView = Inflate(context, Resource.Layout.HappinessRatingControlLayout, this);
             rating1 = (ImageButton)FindViewById(Resource.Id.imageButton1);
             rating2 = (ImageButton)FindViewById(Resource.Id.imageButton2);
@@ -132,5 +136,16 @@ namespace QuestionRenderPrototype.Droid
 
         }
 
+        public List<string> saveAnswers()
+        {
+            List<string> answer = new List<string>();
+            answer.Add(selected.ToString());
+            return answer;
+        }
+
+        public bool checkIsRequired()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

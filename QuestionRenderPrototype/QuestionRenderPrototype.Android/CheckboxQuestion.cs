@@ -9,12 +9,15 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ClassLibrary1;
 
 namespace QuestionRenderPrototype.Droid
 {
-    class CheckboxQuestion: GridLayout
+    class CheckboxQuestion: GridLayout, IQuestion 
     {
         GridLayout checkBoxGrid;
+
+        List<CheckBox> checkBoxes = new List<CheckBox>();
 
         List<Spec> rowSpecs = new List<Spec>();
 
@@ -24,22 +27,42 @@ namespace QuestionRenderPrototype.Droid
 
         public static View rootView;
 
-        public CheckboxQuestion(Context context, int answers, string questionText) : base(context)
+        bool isRequired;
+
+        public CheckboxQuestion(Context context, QuestionStucture stucture, bool required) : base(context)
         {
             rootView = Inflate(context, Resource.Layout.CheckBoxQuestion, this);
-
             checkBoxGrid = (GridLayout)FindViewById(Resource.Id.CheckBoxGrid);
-            setRows(answers);
+            setRows(stucture.answers.Count);
+            isRequired = required;
 
-            checkBoxGrid.RowCount = answers + 1;
+            checkBoxGrid.RowCount = stucture.answers.Count + 1;
 
             for (int i = 0; i < rowSpecs.Count; i++)
             {
-
-                checkBoxGrid.AddView(new CheckBox(context), new GridLayout.LayoutParams(rowSpecs.ElementAt(i), colSpec1));
-
+                checkBoxGrid.AddView(createNewCheckBox(context,i, stucture.answers[i]), new GridLayout.LayoutParams(rowSpecs.ElementAt(i), colSpec1));
             }
 
+        }
+
+        
+        CheckBox createNewCheckBox(Context context, int id)
+        {
+            CheckBox newCheckBox = new CheckBox(context);
+            newCheckBox.Id = id;
+            //set click listener
+            checkBoxes.Add(newCheckBox);
+            return newCheckBox;
+        }
+
+        CheckBox createNewCheckBox(Context context, int id, string questionText)
+        {
+            CheckBox newCheckBox = new CheckBox(context);
+            newCheckBox.Id = id;
+            newCheckBox.Text = questionText;
+            //set click listener
+            checkBoxes.Add(newCheckBox);
+            return newCheckBox;
         }
 
         private void setRows(int answers)
@@ -51,8 +74,23 @@ namespace QuestionRenderPrototype.Droid
             }
         }
 
+        public List<string> saveAnswers()
+        {
+            List<string> answers = new List<string>();
+            foreach (CheckBox ch in checkBoxes)
+            {
+                if (ch.Checked)
+                {
+                    answers.Add(ch.Id.ToString());
+                }
+            }
 
+            return answers;
+        }
 
-
+        public bool checkIsRequired()
+        {
+            return isRequired;
+        }
     }
 }
